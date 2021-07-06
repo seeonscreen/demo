@@ -30,7 +30,6 @@ public class Arrests {
     @Column(name = "amount")
     private Long amount;
 
-
     @Column(name = "operation")
     private Integer operation;
 

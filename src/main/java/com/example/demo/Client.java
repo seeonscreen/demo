@@ -15,9 +15,6 @@ import java.util.UUID;
 
 public class Client {
 
-    //String GUID;
-    //Arrests listOfArrests;
-
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
@@ -114,7 +111,5 @@ public class Client {
         this.birthDate=birthDate;
         this.placeOfBirth=placeOfBirth;
     }
-
-
 }
 
