@@ -15,20 +15,27 @@ public class Arrests {
     @JoinColumn(name = "CLIENT_ID", nullable = false)
     private Client client;
 
-    @Column(name="organCode")
+    @Column(name = "organCode")
     private Integer organCode;
 
-    @Column(name="docDate")
+    @Column(name = "docDate")
     private Date docDate;
 
-    @Column(name="docNum")
+    @Column(name = "docNum")
     private String docNum;
 
-    @Column(name="purpose")
+    @Column(name = "purpose")
     private String purpose;
 
-    @Column(name="amount")
+    @Column(name = "amount")
     private Long amount;
+
+
+    @Column(name = "operation")
+    private Integer operation;
+
+    @Column(name = "status")
+    private String status;
 
     public Client getClient() {
         return client;
@@ -46,18 +53,6 @@ public class Arrests {
         this.status = status;
     }
 
-    @Column(name="operation")
-    private Integer operation;
-
-    @Column(name="status")
-    private String status;
-
-    public Arrests() {
-
-    }
-
-
-
     public Long getId() {
         return id;
     }
@@ -73,6 +68,7 @@ public class Arrests {
     public void setOrganCode(Integer organCode) {
         this.organCode = organCode;
     }
+
     public Date getDocDate() {
         return docDate;
     }
@@ -80,57 +76,71 @@ public class Arrests {
     public void setDocDate(Date docDate) {
         this.docDate = docDate;
     }
+
     public String getDocNum() {
         return docNum;
     }
-    public  void setDocNum (String docNum){
-        this.docNum=docNum;
+
+    public void setDocNum(String docNum) {
+        this.docNum = docNum;
     }
+
     public String getPurpose() {
         return purpose;
     }
-    public void setPurpose(String purpose){
-        this.purpose=purpose;
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
     }
-    public Long getAmount(){
+
+    public Long getAmount() {
         return amount;
     }
-    public void setAmount(Long amount){
-        this.amount=amount;
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
     }
+
     public Integer getOperation() {
         return operation;
     }
-    public void setOperation(Integer operation){
-        this.operation=operation;
-    }
-    public Client getClients(){
-        return client;
-    }
-    public void setClients(Client clients) {
-        this.client=clients;
+
+    public void setOperation(Integer operation) {
+        this.operation = operation;
     }
 
-    public Arrests (Long id,Integer organCode, Date docDate, String docNum, String purpose, Long amount,Integer operation,String status,Client clients)
-    {   this.id=id;
-        this.organCode = organCode;
-        this.docDate = docDate;
-        this.docNum = docNum;
-        this.purpose = purpose;
-        this.amount=amount;
-        this.operation=operation;
-        this.status=status;
-        this.client=clients;
+    public Client getClients() {
+        return client;
     }
-    public Arrests (Integer organCode, Date docDate, String docNum, String purpose, Long amount,Integer operation,String status,Client clients)
-    {
+
+    public void setClients(Client clients) {
+        this.client = clients;
+    }
+
+    public Arrests() {
+
+    }
+
+    public Arrests(Long id, Integer organCode, Date docDate, String docNum, String purpose, Long amount, Integer operation, String status, Client clients) {
+        this.id = id;
         this.organCode = organCode;
         this.docDate = docDate;
         this.docNum = docNum;
         this.purpose = purpose;
-        this.amount=amount;
-        this.operation=operation;
-        this.status=status;
-        this.client=clients;
+        this.amount = amount;
+        this.operation = operation;
+        this.status = status;
+        this.client = clients;
+    }
+
+    public Arrests(Integer organCode, Date docDate, String docNum, String purpose, Long amount, Integer operation, String status, Client clients) {
+        this.organCode = organCode;
+        this.docDate = docDate;
+        this.docNum = docNum;
+        this.purpose = purpose;
+        this.amount = amount;
+        this.operation = operation;
+        this.status = status;
+        this.client = clients;
     }
 }

@@ -16,11 +16,11 @@ import java.sql.Date;
 public class ClientRequest {
 
     @NotBlank(message ="Поле 'Имя' заполнено некорректно.")
-    @Pattern(regexp="^[а-яА-Я]{1,100}$",message="Кол-во символов в поле 'Имя' не должно превышать 100.")
+    @Pattern(regexp="^[а-яА-Я]{1,100}$",message="Кол-во символов в поле 'Имя' не должно превышать 100 в кириллице.")
     private String firstName;
 
     @NotBlank(message ="Поле 'Фамилия' заполнено некорректно.")
-    @Pattern(regexp="^[а-яА-Я]{1,100}$",message="Кол-во символов в поле 'Фамилия' не должно превышать 100.")
+    @Pattern(regexp="^[а-яА-Я]{1,100}$",message="Кол-во символов в поле 'Фамилия' не должно превышать 100 в кириллице.")
     private String lastName;
 
     @NotNull(message ="Поле 'Тип ДУЛ' заполнено некорректно.")

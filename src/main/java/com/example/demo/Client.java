@@ -1,8 +1,12 @@
 package com.example.demo;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.id.UUIDGenerator;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
+import java.util.UUID;
 
 
 @Entity
@@ -15,8 +19,10 @@ public class Client {
     //Arrests listOfArrests;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long guid;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "guid", updatable = false, nullable = false)
+    private UUID guid;
 
     @Column(name="FIRSTNAME")
     private String firstName;
@@ -42,12 +48,11 @@ public class Client {
     public Client() {
 
     }
-
-    public Long getId() {
+    public UUID getId() {
         return guid;
     }
 
-    public void setId(Long guid) {
+    public void setId(UUID guid) {
         this.guid = guid;
     }
 
@@ -99,12 +104,7 @@ public class Client {
         this.placeOfBirth = placeOfBirth;
     }
 
-    /*@Override
-    public String toString() {
-        return String.format(
-                "{'id'=%d, 'firstName'='%s', 'lastName'='%s','numbAndSeries'='%s}",
-                guid, firstName, lastName,numbAndSeries);
-    }*/
+
      public Client (String firstName, String lastName, Integer typeDUL, String numbAndSeries, Date birthDate, String placeOfBirth)
     {
         this.firstName = firstName;
